@@ -2,7 +2,7 @@
 A Custom AppBarLayout that can fling smoothly
 
 ## ScreenShot
- ![screen](./screenshot/screen.gif)
+ ![img1](./screenshot/1.gif)  ![img2](./screenshot/2.gif)  ![img3](./screenshot/3.gif)
  
 ## Usage
 #### for NestedScrollView or RecyclerView,just add behavior @string/fling_behavior
