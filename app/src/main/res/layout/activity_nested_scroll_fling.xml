@@ -14,6 +14,7 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="0dp"
             android:minWidth="44dp"
             app:layout_scrollFlags="scroll">
 
@@ -21,6 +22,7 @@
                 android:id="@+id/img1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#fff"
                 />
         </android.support.design.widget.CollapsingToolbarLayout>
 

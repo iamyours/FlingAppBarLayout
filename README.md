@@ -154,7 +154,5 @@ or
     android:layout_width="match_parent"
     android:id="@+id/recyclerView"
     android:layout_height="wrap_content"
-    android:tag="fling"
-    android:orientation="vertical">
-</android.support.v7.widget.RecyclerView>
+    android:tag="fling"/>
 ```
