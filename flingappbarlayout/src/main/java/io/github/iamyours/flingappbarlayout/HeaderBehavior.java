@@ -31,10 +31,7 @@ import android.widget.OverScroller;
 
 import java.lang.ref.WeakReference;
 
-/**
- * The {@link Behavior} for a view that sits vertically above scrolling a view.
- * See {@link HeaderScrollingViewBehavior}.
- */
+
 abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
 
     private static final int INVALID_POINTER = -1;
