@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <io.github.iamyours.flingappbarlayout.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="800dp"
+            android:minWidth="44dp"
+            app:layout_scrollFlags="scroll">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:text="标题"
+                android:textSize="18dp" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_launcher_background" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#ccc"
+            app:layout_scrollFlags="exitUntilCollapsed|enterAlways|enterAlwaysCollapsed" />
+    </io.github.iamyours.flingappbarlayout.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/fling_behavior" />
+</android.support.design.widget.CoordinatorLayout>
