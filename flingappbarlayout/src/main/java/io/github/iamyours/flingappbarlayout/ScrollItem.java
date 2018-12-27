@@ -65,13 +65,12 @@ public class ScrollItem {
      */
     private void stopScroll(NestedScrollView v) {
         try {
-            Field field = v.getClass().getDeclaredField("mScroller");
+            Field field = ReflectUtil.getDeclaredField(v, "mScroller");
+            if (field == null) return;
             field.setAccessible(true);
             OverScroller scroller = (OverScroller) field.get(v);
             if (scroller != null) scroller.abortAnimation();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -83,20 +82,15 @@ public class ScrollItem {
      */
     private void stopScroll(RecyclerView rv) {
         try {
-            Field field = rv.getClass().getDeclaredField("mViewFlinger");
+            Field field = ReflectUtil.getDeclaredField(rv, "mViewFlinger");
+            if (field == null) return;
             field.setAccessible(true);
             Object obj = field.get(rv);
             if (obj == null) return;
             Method method = obj.getClass().getDeclaredMethod("stop");
             method.setAccessible(true);
             method.invoke(obj);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
