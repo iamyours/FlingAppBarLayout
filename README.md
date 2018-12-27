@@ -9,7 +9,8 @@ A Custom AppBarLayout that can fling smoothly
 ```gradle
 compile 'io.github.iamyours:flingappbarlayout:1.0.2'
 ```
-#### for NestedScrollView or RecyclerView,just add behavior @string/fling_behavior
+
+#### for NestedScrollView or RecyclerView,replace AppBarLayout ,add behavior @string/fling_behavior
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
