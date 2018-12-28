@@ -5,7 +5,12 @@ A Custom AppBarLayout that can fling smoothly
  <img src="./screenshot/1.gif" width="33%"><img src="./screenshot/2.gif" width="33%"><img src="./screenshot/3.gif" width="33%">
  
 ## Usage
-#### for NestedScrollView or RecyclerView,just add behavior @string/fling_behavior
+#### add to dependencies
+```gradle
+compile 'io.github.iamyours:flingappbarlayout:1.0.2'
+```
+
+#### for NestedScrollView or RecyclerView,replace AppBarLayout ,add behavior @string/fling_behavior
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
