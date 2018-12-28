@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.yanxx.behaviortest.NestedScrollFlingActivity
 import com.example.yanxx.behaviortest.RecyclerViewFlingActivity
+import com.example.yanxx.behaviortest.SmartRefreshLayoutFlingActivity
 import com.example.yanxx.behaviortest.ViewPagerFlingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         }
         viewPagerBtn.setOnClickListener {
             toActivity(ViewPagerFlingActivity::class.java)
+        }
+        refreshLayoutBtn.setOnClickListener {
+            toActivity(SmartRefreshLayoutFlingActivity::class.java)
         }
     }
 

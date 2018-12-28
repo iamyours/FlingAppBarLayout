@@ -7,26 +7,31 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-  <Button
-      android:id="@+id/nestedScrollViewBtn"
-      android:layout_width="match_parent"
-      android:layout_height="50dp"
-      android:text="NestedScrollView"
-      android:textAllCaps="false"
-      />
+    <Button
+        android:id="@+id/nestedScrollViewBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="NestedScrollView"
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/recyclerViewBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="RecyclerView"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false" />
+
     <Button
         android:id="@+id/viewPagerBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="ViewPager"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/refreshLayoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="in SmartRefreshLayout"
+        android:textAllCaps="false" />
 </LinearLayout>

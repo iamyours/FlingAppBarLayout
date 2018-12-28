@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.yanxx.behaviortest.ViewPagerFlingActivity"/>
-        <activity android:name="com.example.yanxx.behaviortest.RecyclerViewFlingActivity"/>
-        <activity android:name="com.example.yanxx.behaviortest.NestedScrollFlingActivity"/>
+        <activity android:name="com.example.yanxx.behaviortest.ViewPagerFlingActivity" />
+        <activity android:name="com.example.yanxx.behaviortest.RecyclerViewFlingActivity" />
+        <activity android:name="com.example.yanxx.behaviortest.NestedScrollFlingActivity" />
+        <activity android:name="com.example.yanxx.behaviortest.SmartRefreshLayoutFlingActivity" />
     </application>
 
 </manifest>
