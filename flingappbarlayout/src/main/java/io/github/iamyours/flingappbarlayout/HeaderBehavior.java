@@ -17,6 +17,7 @@
 package io.github.iamyours.flingappbarlayout;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.CoordinatorLayout.Behavior;
 import android.support.v4.math.MathUtils;
@@ -68,6 +69,7 @@ abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
         switch (ev.getActionMasked()) {
             case MotionEvent.ACTION_DOWN: {
                 mIsBeingDragged = false;
+                if (mScroller != null) mScroller.abortAnimation();//fix #1
                 final int x = (int) ev.getX();
                 final int y = (int) ev.getY();
                 if (canDragView(child) && parent.isPointInChildBounds(child, x, y)) {
@@ -127,7 +129,6 @@ abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
             case MotionEvent.ACTION_DOWN: {
                 final int x = (int) ev.getX();
                 final int y = (int) ev.getY();
-
                 if (parent.isPointInChildBounds(child, x, y) && canDragView(child)) {
                     mLastMotionY = y;
                     mActivePointerId = ev.getPointerId(0);
@@ -238,7 +239,6 @@ abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
             mScroller = new OverScroller(layout.getContext());
         }
         int fixedMin = velocityY < 0 ? minOffset - 5000 : minOffset;
-        Log.e("test", "y:" + velocityY);
         mScroller.fling(
                 0, getTopAndBottomOffset(), // curr
                 0, Math.round(velocityY), // velocity.
