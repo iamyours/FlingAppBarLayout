@@ -9,6 +9,11 @@
 ```gradle
 compile 'io.github.iamyours:flingappbarlayout:1.0.4'
 ```
+for AndroidX
+```gradle
+compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
+```
+[demo](https://github.com/iamyours/FlingAppBarLayout/tree/AndroidX)
 
 #### for NestedScrollView or RecyclerView,replace AppBarLayout ,add behavior @string/fling_behavior
 ``` xml
