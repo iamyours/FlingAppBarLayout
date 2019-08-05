@@ -1,0 +1,113 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api 'androidx.coordinatorlayout:coordinatorlayout:1.0.0'
+    api 'com.google.android.material:material:1.0.0'
+}
+
+
+group = "io.github.iamyours"
+version = "1.0.0"
+project.archivesBaseName = "flingappbarlayoutx"
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+
+}
+
+
+
+def siteUrl = 'https://github.com/iamyours/EasyWidgets'
+def gitUrl = 'https://github.com/iamyours/EasyWidgets.git'
+def issueUrl = 'https://github.com/iamyours/EasyWidgets/issues'
+
+install {
+    repositories.mavenInstaller {
+// generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'jar'
+                name 'Simple TabLayout'
+                url siteUrl
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'RogerYan'		//填写的一些基本信息
+                        name 'Roger'
+                        email 'yan127422@163.com'
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+
+bintray {
+    user = "iamyours"
+    key = "xxx"
+    configurations = ['archives']
+    pkg {
+        repo = "maven" //bintray 上面 Package名字
+        name = "EasyTabLayout" //bintray 上面项目名
+        desc = 'A TabLayout easy to use'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        issueTrackerUrl = issueUrl
+        licenses = ["Apache-2.0"]
+        labels = 'java'
+        publicDownloadNumbers = true
+        publish = true
+    }
+}

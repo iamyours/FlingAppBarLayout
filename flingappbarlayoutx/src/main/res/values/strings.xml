@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">flingappbarlayoutx</string>
+    <string name="fling_behavior">io.github.iamyours.flingappbarlayoutx.AppBarLayout$ScrollingViewBehavior</string>
+</resources>
