@@ -11,18 +11,11 @@
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="true">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="400dp"
             android:minWidth="44dp"
-            app:layout_scrollFlags="scroll">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:gravity="center"
-                android:text="标题"
-                android:textSize="18dp" />
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:layout_width="80dp"
@@ -30,7 +23,14 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/ic_launcher_background" />
-        </android.support.design.widget.CollapsingToolbarLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                app:title="test"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"/>
+        </io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout>
 
         <View
             android:layout_width="match_parent"
