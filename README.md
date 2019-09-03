@@ -7,13 +7,8 @@
 ## Usage
 #### add to dependencies
 ```gradle
-compile 'io.github.iamyours:flingappbarlayout:1.0.4'
+compile 'io.github.iamyours:flingappbarlayout:1.0.5'
 ```
-for AndroidX
-```gradle
-compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
-```
-[androidx demo](https://github.com/iamyours/FlingAppBarLayout/tree/AndroidX)
 
 #### for NestedScrollView or RecyclerView,replace AppBarLayout ,add behavior @string/fling_behavior
 ``` xml
@@ -30,7 +25,7 @@ compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
         android:layout_height="wrap_content"
         app:elevation="0dp">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="0dp"
@@ -43,7 +38,7 @@ compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
                 android:layout_height="wrap_content"
                 android:background="#fff"
                 />
-        </android.support.design.widget.CollapsingToolbarLayout>
+        </io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout>
 
         <ImageView
             android:id="@+id/img_tab"
@@ -90,7 +85,7 @@ compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="true">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+        <io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:minWidth="44dp"
@@ -109,7 +104,7 @@ compile 'io.github.iamyours:flingappbarlayoutx:1.0.4'
                 android:layout_gravity="center"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/ic_launcher_background" />
-        </android.support.design.widget.CollapsingToolbarLayout>
+        </io.github.iamyours.flingappbarlayout.CollapsingToolbarLayout>
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
