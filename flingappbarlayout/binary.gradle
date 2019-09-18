@@ -2,7 +2,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = "io.github.iamyours"
-version = "1.0.6"
+version = "1.0.7"
 project.archivesBaseName = "flingappbarlayout"
 
 task androidJavadocs(type: Javadoc) {
@@ -66,8 +66,8 @@ install {
 
 
 bintray {
-    user = "iamyours"
-    key = "xxx"
+    user = "xxx"
+    key = "99a4d947b1459a3818a3c1e992cdc16dab01917d"
     configurations = ['archives']
     pkg {
         repo = "maven" //bintray 上面 Package名字
