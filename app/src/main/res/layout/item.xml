@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="200dp"
         android:gravity="center"
         android:textSize="18dp"
         tools:text="test" />

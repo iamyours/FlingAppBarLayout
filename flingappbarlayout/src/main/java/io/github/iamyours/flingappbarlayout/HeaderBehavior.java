@@ -238,7 +238,7 @@ abstract class HeaderBehavior<V extends View> extends ViewOffsetBehavior<V> {
         if (mScroller == null) {
             mScroller = new OverScroller(layout.getContext());
         }
-        int fixedMin = velocityY < 0 ? minOffset - 5000 : minOffset;
+        int fixedMin = velocityY < 0 ? minOffset - Integer.MAX_VALUE / 2 : minOffset;
         mScroller.fling(
                 0, getTopAndBottomOffset(), // curr
                 0, Math.round(velocityY), // velocity.
