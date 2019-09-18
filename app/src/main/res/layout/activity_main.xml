@@ -20,6 +20,12 @@
         android:layout_height="50dp"
         android:text="RecyclerView"
         android:textAllCaps="false" />
+    <Button
+        android:id="@+id/recyclerViewBtn2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="RecyclerView瀑布流"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/viewPagerBtn"

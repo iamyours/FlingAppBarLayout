@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.yanxx.behaviortest.ViewPagerFlingActivity" />
-        <activity android:name="com.example.yanxx.behaviortest.RecyclerViewFlingActivity" />
+        <activity android:name=".RecyclerViewFlingActivity" />
+        <activity android:name=".RecyclerViewFlingActivity2" />
         <activity android:name="com.example.yanxx.behaviortest.NestedScrollFlingActivity" />
         <activity android:name="com.example.yanxx.behaviortest.SmartRefreshLayoutFlingActivity" />
     </application>

@@ -7,7 +7,7 @@
 ## Usage
 #### add to dependencies
 ```gradle
-compile 'io.github.iamyours:flingappbarlayout:1.0.5'
+compile 'io.github.iamyours:flingappbarlayout:1.0.6'
 ```
 
 #### for NestedScrollView or RecyclerView,replace AppBarLayout ,add behavior @string/fling_behavior

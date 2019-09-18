@@ -5,7 +5,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.yanxx.behaviortest.NestedScrollFlingActivity
-import com.example.yanxx.behaviortest.RecyclerViewFlingActivity
 import com.example.yanxx.behaviortest.SmartRefreshLayoutFlingActivity
 import com.example.yanxx.behaviortest.ViewPagerFlingActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +23,9 @@ class MainActivity : AppCompatActivity() {
         }
         recyclerViewBtn.setOnClickListener {
             toActivity(RecyclerViewFlingActivity::class.java)
+        }
+        recyclerViewBtn2.setOnClickListener {
+            toActivity(RecyclerViewFlingActivity2::class.java)
         }
         viewPagerBtn.setOnClickListener {
             toActivity(ViewPagerFlingActivity::class.java)
