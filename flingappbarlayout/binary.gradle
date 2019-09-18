@@ -1,0 +1,84 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = "io.github.iamyours"
+version = "1.0.6"
+project.archivesBaseName = "flingappbarlayout"
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+
+artifacts {
+    archives androidSourcesJar
+    archives androidJavadocsJar
+
+}
+
+
+
+def siteUrl = 'https://github.com/iamyours/FlingAppBarLayout'
+def gitUrl = 'https://github.com/iamyours/FlingAppBarLayout.git'
+def issueUrl = 'https://github.com/iamyours/FlingAppBarLayout/issues'
+
+install {
+    repositories.mavenInstaller {
+// generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'jar'
+                name 'FlingAppBarLayout'
+                url siteUrl
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id 'RogerYan'		//填写的一些基本信息
+                        name 'Roger'
+                        email 'yan127422@163.com'
+                    }
+                }
+
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+
+bintray {
+    user = "iamyours"
+    key = "xxx"
+    configurations = ['archives']
+    pkg {
+        repo = "maven" //bintray 上面 Package名字
+        name = "FlingAppBarLayout" //bintray 上面项目名
+        desc = 'A Custom AppBarLayout that can fling smoothly'
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        issueTrackerUrl = issueUrl
+        licenses = ["Apache-2.0"]
+        labels = 'android'
+        publicDownloadNumbers = true
+        publish = true
+    }
+}

@@ -4,6 +4,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.OverScroller;
 
@@ -15,7 +17,7 @@ import java.lang.reflect.Method;
 public class ScrollItem {
     private int type; //1: NestedScrollView   2:RecyclerView
     private WeakReference<NestedScrollView> scrollViewRef;
-    private WeakReference<LinearLayoutManager> layoutManagerRef;
+    private WeakReference<RecyclerView> recyclerViewRef;
 
     public ScrollItem(View v) {
         findScrollItem(v);
@@ -46,14 +48,10 @@ public class ScrollItem {
             return true;
         }
         if (v instanceof RecyclerView) {
-            RecyclerView.LayoutManager lm = ((RecyclerView) v).getLayoutManager();
-            if (lm instanceof LinearLayoutManager) {
-                LinearLayoutManager llm = (LinearLayoutManager) lm;
-                type = 2;
-                layoutManagerRef = new WeakReference<LinearLayoutManager>(llm);
-                stopScroll((RecyclerView) v);
-                return true;
-            }
+            recyclerViewRef = new WeakReference((RecyclerView) v);
+            type = 2;
+            stopScroll((RecyclerView) v);
+            return true;
         }
         return false;
     }
@@ -81,6 +79,7 @@ public class ScrollItem {
      * @param
      */
     private void stopScroll(RecyclerView rv) {
+        lastY = 0;
         try {
             Field field = ReflectUtil.getDeclaredField(rv, "mViewFlinger");
             if (field == null) return;
@@ -95,11 +94,14 @@ public class ScrollItem {
         }
     }
 
+    private int lastY = 0;
+
     public void scroll(int dy) {
         if (type == 1) {
             scrollViewRef.get().scrollTo(0, dy);
         } else if (type == 2) {
-            layoutManagerRef.get().scrollToPositionWithOffset(0, -dy);
+            recyclerViewRef.get().scrollBy(0,dy-lastY);
+            lastY = dy;
         }
     }
 
